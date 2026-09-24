@@ -1,0 +1,86 @@
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.composer-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ink);
+  padding: 6px 2px;
+}
+
+.composer-input:focus {
+  outline: none;
+}
+
+.composer-input::placeholder {
+  color: var(--ink-soft);
+}
+
+.composer-send {
+  border: none;
+  background: var(--sage);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.composer-send:hover:not(:disabled) {
+  background: var(--sage-deep);
+}
+
+.composer-send:disabled {
+  background: var(--line);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+.mic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.mic-button:hover {
+  color: var(--sage-deep);
+  border-color: var(--sage);
+}
+
+.mic-button.is-recording {
+  background: var(--clay);
+  border-color: var(--clay);
+  color: #fff;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(169, 86, 63, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(169, 86, 63, 0);
+  }
+}

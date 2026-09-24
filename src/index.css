@@ -1,0 +1,94 @@
+/* ---------------------------------------------------------
+   EAPEN design tokens
+   Palette: warm paper background, ink text, quiet sage accent
+   (a calm, non-clinical color for an emotional-wellbeing tool —
+   deliberately not the terracotta/cream combo every AI tool reaches for)
+   Type: Fraunces (display serif, carries the brand) + Inter (body/UI)
+--------------------------------------------------------- */
+:root {
+  --paper: #f3f1ec;
+  --paper-raised: #fbfaf7;
+  --ink: #1c1e1b;
+  --ink-soft: #565a52;
+  --line: #dcd8cd;
+  --sage: #4b6a5c;
+  --sage-deep: #35493f;
+  --sage-tint: #e3ebe5;
+  --clay: #a9563f;
+  --clay-tint: #f3e3dd;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--sage-tint);
+}
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+/* scrollbars stay quiet */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
