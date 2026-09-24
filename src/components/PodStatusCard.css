@@ -1,0 +1,125 @@
+.pod-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: var(--space-3);
+}
+
+.pod-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pod-mic {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--sage-tint);
+  color: var(--sage-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pod-mic-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sage);
+  opacity: 0.5;
+  animation: pod-pulse 2.2s ease-out infinite;
+}
+
+@keyframes pod-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.pod-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pod-subtitle {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+.mood-bar-wrap {
+  padding: 0 2px;
+}
+
+.mood-bar {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--clay) 0%,
+    var(--amber) 32%,
+    var(--sage) 60%,
+    var(--mint) 100%
+  );
+  opacity: 0.85;
+}
+
+.mood-marker {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--paper-raised);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.mood-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+.mood-reading {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.mood-reading-text {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mood-reading-text.tone-clay {
+  color: var(--clay);
+}
+.mood-reading-text.tone-amber {
+  color: var(--amber);
+}
+.mood-reading-text.tone-sage {
+  color: var(--sage-deep);
+}
+.mood-reading-text.tone-mint {
+  color: var(--mint);
+}
+.mood-reading-text.tone-warm {
+  color: #8a6a1f;
+}
+.mood-reading-text.tone-neutral {
+  color: var(--ink-soft);
+}

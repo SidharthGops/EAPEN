@@ -38,6 +38,16 @@
   color: #8a6a1f;
 }
 
+.tone-amber {
+  background: var(--amber-tint);
+  color: var(--amber);
+}
+
+.tone-mint {
+  background: var(--mint-tint);
+  color: var(--mint);
+}
+
 .tone-cool {
   background: #e4e9ef;
   color: #445167;

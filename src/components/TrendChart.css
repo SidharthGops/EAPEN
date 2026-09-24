@@ -1,0 +1,20 @@
+.trend-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  padding-left: 4px;
+}
+
+.trend-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.trend-legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}

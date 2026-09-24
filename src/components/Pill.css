@@ -1,0 +1,38 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pill-neutral {
+  background: #ecebe6;
+  color: var(--ink-soft);
+}
+
+.pill-sage {
+  background: var(--sage-tint);
+  color: var(--sage-deep);
+}
+
+.pill-positive {
+  background: var(--sage-tint);
+  color: var(--positive);
+}
+
+.pill-positive::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--positive);
+}
+
+.pill-clay {
+  background: var(--clay-tint);
+  color: var(--clay);
+}

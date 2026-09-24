@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSession } from "../context/SessionContext.jsx";
 import "./Sidebar.css";
 
 const LINKS = [
@@ -10,6 +11,8 @@ const LINKS = [
 ];
 
 export default function Sidebar() {
+  const { personaInfo } = useSession();
+
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
@@ -35,8 +38,10 @@ export default function Sidebar() {
       <div className="sidebar-foot">
         <div className="sidebar-status">
           <span className="status-dot" />
-          Backend connected
+          Pod online
         </div>
+        <div className="sidebar-foot-line">Living room · {personaInfo.name} persona</div>
+        <div className="sidebar-foot-line">Raw audio stays on the pod</div>
       </div>
     </aside>
   );

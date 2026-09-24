@@ -50,6 +50,25 @@ app.add_middleware(
 )
 ```
 
+## Voice input, right now
+
+There's no backend yet, so the mic button doesn't just sit there uselessly:
+in Chrome/Edge it uses the browser's built-in Web Speech API to transcribe
+what you say **live, on-device**, right into the text field — you can edit
+it, then hit Send like any typed message. You'll also see a real audio
+waveform (driven by an `AnalyserNode` reading your actual mic input) and a
+recording timer while it's listening.
+
+In browsers without that API (Firefox, Safari), it falls back to recording
+raw audio and POSTing it to `/api/chat/audio` — which will fail until that
+route exists on your backend.
+
+**When your FastAPI STT is ready:** in `src/components/Composer.jsx`, either
+keep the dictation path as the primary UX and only use `onSendAudio` as the
+non-Chrome fallback (as it is now), or switch entirely to server-side STT
+by removing the `supportsDictation` branch and always calling `onSendAudio`
+with the recorded blob.
+
 ## Where to extend next
 
 - Swap the REST `/api/chat` call for a `/ws/chat/{session_id}` WebSocket for

@@ -20,6 +20,12 @@
   padding: var(--space-3) var(--space-5) var(--space-4);
 }
 
+.chat-header-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .chat-error {
   margin: 0 var(--space-5);
   padding: 8px 12px;
@@ -27,6 +33,15 @@
   color: var(--clay);
   border-radius: var(--radius-sm);
   font-size: 13px;
+}
+
+.chat-notice {
+  margin: 0 var(--space-5) var(--space-2);
+  padding: 7px 12px;
+  background: #ecebe6;
+  color: var(--ink-soft);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
 }
 
 .typing-row {

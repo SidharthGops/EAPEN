@@ -1,23 +1,11 @@
 import React from "react";
 import "./EmotionBadge.css";
-
-// Maps a discrete emotion label to a quiet, low-saturation color.
-// Kept deliberately muted so the UI doesn't look like a mood-ring toy.
-const TONE_BY_LABEL = {
-  joy: "tone-warm",
-  calm: "tone-sage",
-  neutral: "tone-neutral",
-  sadness: "tone-cool",
-  anger: "tone-clay",
-  fear: "tone-clay",
-  distress: "tone-clay",
-  surprise: "tone-warm",
-};
+import { toneForLabel } from "./emotionTones.js";
 
 export default function EmotionBadge({ emotion }) {
   if (!emotion) return null;
   const { label = "neutral", confidence, modality_agreement } = emotion;
-  const tone = TONE_BY_LABEL[label?.toLowerCase()] || "tone-neutral";
+  const tone = toneForLabel(label);
 
   return (
     <span className={`emotion-badge ${tone}`} title="Detected emotional state">
