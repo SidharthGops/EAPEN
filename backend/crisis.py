@@ -2,6 +2,9 @@
 import re
 
 HARD = [
+    r"\bbetter off (without me|if i (didn'?t|did not) exist|if i was gone|if i were gone)\b",
+    r"\bpeople (would be|are) better off\b",
+    r"\bworld (would be|is) better off without me\b",
     r"\bkill myself\b",
     r"\bsuicid",
     r"\bend my life\b",
@@ -9,7 +12,6 @@ HARD = [
     r"\bdon'?t want to (live|be alive)\b",
     r"\bhurt myself\b",
     r"\bself[- ]?harm\b",
-    r"\bbetter off (dead|without me)\b",
 ]
 SOFT = [
     r"\bno (point|reason) (in|to) (living|going on|go on)\b",

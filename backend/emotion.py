@@ -8,21 +8,19 @@ import os
 
 import numpy as np
 from faster_whisper import WhisperModel
+# pyrefly: ignore [missing-import]
 from faster_whisper.audio import decode_audio  # decodes webm/ogg/wav without system ffmpeg
 from transformers import pipeline
 
-LABELS = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
+LABELS = ["anger", "joy", "neutral", "sadness"]
 IDX = {l: i for i, l in enumerate(LABELS)}
 
 # Rough circumplex placement (valence, arousal) per label, range [-1, 1]
 VA = {
     "anger": (-0.6, 0.8),
-    "disgust": (-0.6, 0.3),
-    "fear": (-0.7, 0.7),
     "joy": (0.8, 0.6),
     "neutral": (0.0, 0.0),
     "sadness": (-0.7, -0.4),
-    "surprise": (0.2, 0.8),
 }
 V = np.array([VA[l][0] for l in LABELS])
 A = np.array([VA[l][1] for l in LABELS])
@@ -30,13 +28,9 @@ A = np.array([VA[l][1] for l in LABELS])
 # wav2vec2 label set -> common label set
 AUDIO_MAP = {
     "angry": "anger",
-    "calm": "neutral",
-    "disgust": "disgust",
-    "fearful": "fear",
     "happy": "joy",
     "neutral": "neutral",
     "sad": "sadness",
-    "surprised": "surprise",
 }
 
 print("[emotion] loading text model...")
@@ -52,7 +46,7 @@ if _USE_AUDIO:
     print("[emotion] loading speech emotion model...")
     _audio_clf = pipeline(
         "audio-classification",
-        model="ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition",
+        model="superb/wav2vec2-base-superb-er",
     )
 
 print("[emotion] loading whisper...")
